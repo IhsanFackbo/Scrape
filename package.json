@@ -1,0 +1,7 @@
+{
+  "name": "shuradev3-builds",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-manifest.js"
+  }
+}
