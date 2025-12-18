@@ -4,11 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShuraDev3 Builds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>ShuraDev3 Builds</h1>
-  <div id="list"></div>
-  <script src="app.js"></script>
+
+<header class="header">
+  <div class="logo">ShuraDev3 <span>Builds.</span></div>
+  <div class="subtitle">Minimal, Creative.</div>
+</header>
+
+<main class="container">
+  <div id="list" class="grid"></div>
+</main>
+
+<!-- MODAL RAW CODE -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span id="modalTitle">Raw Code</span>
+      <button onclick="closeModal()">✕</button>
+    </div>
+    <pre><code id="rawCode"></code></pre>
+    <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
