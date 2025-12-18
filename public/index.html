@@ -1,35 +1,68 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ShuraDev3 Builds</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css"/>
+
+  <!-- Prism (dark) + line numbers -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.css">
 </head>
 <body>
-
-<header class="header">
-  <div class="logo">ShuraDev3 <span>Builds.</span></div>
-  <div class="subtitle">Minimal, Creative.</div>
-</header>
-
-<main class="container">
-  <div id="list" class="grid"></div>
-</main>
-
-<!-- MODAL RAW CODE -->
-<div id="modal" class="modal">
-  <div class="modal-box">
-    <div class="modal-header">
-      <span id="modalTitle">Raw Code</span>
-      <button onclick="closeModal()">✕</button>
+  <header class="top">
+    <div class="brand">
+      <div class="title">ShuraDev3 <span>Builds.</span></div>
+      <div class="sub">Minimal, Creative.</div>
     </div>
-    <pre><code id="rawCode"></code></pre>
-    <button class="copy-btn" onclick="copyCode()">Copy Code</button>
-  </div>
-</div>
+    <div class="count" id="countBox">0 Codes</div>
+  </header>
 
-<script src="app.js"></script>
+  <main class="container">
+    <div class="toolbar">
+      <div class="search">
+        <span>⌕</span>
+        <input id="q" placeholder="Cari plugin… (veo, pinterest, ai)"/>
+      </div>
+      <div class="tags" id="tags"></div>
+    </div>
+
+    <section class="grid" id="grid"></section>
+
+    <footer class="foot">© <span id="year"></span> ShuraDev3</footer>
+  </main>
+
+  <!-- Modal Raw -->
+  <div class="modal" id="modal">
+    <div class="modalCard">
+      <div class="modalHead">
+        <div>
+          <div class="mTitle" id="mTitle">Raw</div>
+          <div class="mSub" id="mSub">—</div>
+        </div>
+        <div class="mBtns">
+          <button class="btn" id="copyCode">Salin code</button>
+          <button class="btn ghost" id="closeModal">Tutup</button>
+        </div>
+      </div>
+
+      <!-- Prism target -->
+      <pre class="code line-numbers"><code id="codeBox" class="language-javascript"></code></pre>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">OK</div>
+
+  <!-- Prism core + JS + plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  <script src="./app.js"></script>
 </body>
 </html>
